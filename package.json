@@ -1,0 +1,11 @@
+{
+  "name": "fashioncloud_api",
+  "description": "API for FashionCloud",
+  "main": "server.js",
+  "dependencies": {
+    "express": "~4.15.3",
+    "mongoose": "~4.1.0",
+    "body-parser": "~1.17.2",
+    "randomstring":"~1.1.5"
+  }
+}
