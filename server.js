@@ -9,6 +9,7 @@ var app        = express();                 // define our app using express
 var bodyParser = require('body-parser');
 var randomstring = require('randomstring');
 var connectionString = "mongodb://localhost:27017/FashionCloudDB"
+var DB_MAX = 100; // maximum number of objects stored in cache
 
 // configure app to use bodyParser()
 // this will let us get the data from a POST
@@ -36,6 +37,15 @@ router.get('/', function(req, res) {
 // ----------------------------------------------------
 router.route('/randomObjects') // create an object in cache
     .post(function(req, res) {
+
+      RandomObject.count({}, function(err, count){ // check if cache is full
+        if (err)
+            res.send(err);
+        console.log(count);
+        if (count == DB_MAX)
+            RandomObject.findOne({}, {}, {sort : {'createdAt': 1}}).remove().exec();
+      });
+
       var randomObject = new RandomObject();
       randomObject.name = req.body.name;
       randomObject.save(function(err) {
