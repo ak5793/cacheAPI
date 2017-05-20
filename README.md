@@ -1,5 +1,13 @@
 # cacheAPI
 
+# Structure
+— app
+——  models
+——— randomObject.js
+— package.json
+— README.md
+— server.js
+
 # Getting Started
 
 - Install the all the required modules listed in package.json with the terminal command ‘npm install’.
@@ -8,7 +16,8 @@
 
 ## Database Schema
 
-RandomObject <Model>
+# RandomObject [Model]
  - name::string
+ - createdAt::Date<Expiration:5mins>
 
 ## API Endpoints
