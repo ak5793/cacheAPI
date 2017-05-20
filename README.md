@@ -33,4 +33,6 @@ RandomObject [Model]
 - PUT: Update specified object
 - DELETE: Deletes specified object
 
-Things I would improve: I would improve the modularity of the endpoints such that they are more descriptive. For example, perhaps creating an object would be done so using a POST to an endpoint /api/randomObjects/create/, etc, while also modularizing the server.js to be more readable. I would also include unit tests using a proper framework.
+**Things I would improve**
+
+I would improve the modularity of the endpoints such that they are more descriptive. For example, perhaps creating an object would be done so using a POST to an endpoint /api/randomObjects/create/, etc, while also modularizing the server.js to be more readable. I would also include unit tests using a proper framework. 
